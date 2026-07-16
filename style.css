@@ -30,7 +30,7 @@
 }
 
 .custom-shape-divider-bottom-1782702114 .shape-fill {
-    fill: #198754;
+    fill: #1E4E5F;
 }
 
 
@@ -54,7 +54,7 @@
 }
 
 .custom-shape-divider-top-1783304606 .shape-fill {
-    fill: #198754;
+    fill: #5C8A3D;
 }
 
 
@@ -63,9 +63,11 @@
 :root{
     --bs-verde:#5C8A3D;
     --bs-verde-claro:#CDD69F;
-    --amarillo:#F2B95F;
-    --naranja:#E0593E;
-    --marron:#6E3B3A;
+    --bs-amarillo:#F2B95F;
+    --bs-naranja:#E0593E;
+    --bs-marron:#6E3B3A;
+    --bs-azul: #2B7A78;
+    --bs-azul-oscuro: #1E4E5F;
 }
 
 .bg-verde{
@@ -77,13 +79,44 @@
 }   
 
 .bg-amarillo{
-    background-color: var(--amarillo) !important;
+    background-color: var(--bs-amarillo) !important;
 }   
 
 .bg-naranja{
-    background-color: var(--naranja) !important;
+    background-color: var(--bs-naranja) !important;
 }
 
 .bg-marron{
-    background-color: var(--marron) !important;
+    background-color: var(--bs-marron) !important;
+}
+
+.bg-azul{
+    background-color: var(--bs-azul) !important;
+}
+
+.bg-azul-oscuro{
+    background-color: var(--bs-azul-oscuro) !important;
+}   
+
+.bg-degradado-azul-verde {
+    background: linear-gradient(180deg, var(--bs-azul-oscuro) 0%, var(--bs-verde) 100%) !important;
+}
+
+
+.custom-hero-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8; 
+    z-index: 1; 
+}
+
+.custom-shape-divider-bottom-1782702114 {
+    z-index: 3;
 }
