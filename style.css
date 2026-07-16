@@ -56,3 +56,34 @@
 .custom-shape-divider-top-1783304606 .shape-fill {
     fill: #198754;
 }
+
+
+
+
+:root{
+    --bs-verde:#5C8A3D;
+    --bs-verde-claro:#CDD69F;
+    --amarillo:#F2B95F;
+    --naranja:#E0593E;
+    --marron:#6E3B3A;
+}
+
+.bg-verde{
+    background-color: var(--bs-verde) !important;
+}
+
+.bg-verde-claro{
+    background-color: var(--bs-verde-claro) !important;
+}   
+
+.bg-amarillo{
+    background-color: var(--amarillo) !important;
+}   
+
+.bg-naranja{
+    background-color: var(--naranja) !important;
+}
+
+.bg-marron{
+    background-color: var(--marron) !important;
+}
