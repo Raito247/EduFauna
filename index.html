@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
     <script src="https://cdn.lordicon.com/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -83,7 +84,10 @@
         </div>
     </header>
 
-    <model-viewer src="manatee.glb" id="modeloRana" camera-orbit="135deg 90deg" style="transform: translateX(25%);" autoplay></model-viewer>
+<main>
+
+<!--    <model-viewer src="manatee.glb" id="modeloRana" camera-orbit="135deg 90deg" style="transform: translateX(25%);" autoplay></model-viewer>
+-->
 
     <section>
         <div class="container-fluid bg-success mt-5 pt-5 position-relative overflow-hidden custom-hero-bg" style="padding-bottom: 50px;">
@@ -116,8 +120,8 @@
     
     <section class="position-relative bg-azul-oscuro overflow-hidden pt-5">
         <div class="my-5 row p-5">
-            <div class="col-sm-6">
-                <img src="images/negro.gif" class="img-fluidS" width="150">
+            <div class="col-sm-6 bg-image hover-zoom">
+                <img src="images/mapa.png"class="img-fluid  w-500">
             </div>
             <div class="col-sm-6">
                 <h1 class="fw-bold display-1 text-white">Nuestros vecinos más especiales te necesitan.</h1>
@@ -125,7 +129,16 @@
             </div>  
         </div>
     </section>
+
 <section>
+    <div class="row">
+        <div class="col-sm">
+            <div class="card">
+
+            </div>
+        </div>
+    </div>
+
 </section>
 
     <section>
@@ -180,7 +193,7 @@
             </div>
         </div>
     </section>
-
+</main>
     <footer>
         <div class="container-fluid bg-verde">
             <nav class="navbar navbar-expand-sm navbar-dark justify-content-center">
@@ -193,24 +206,25 @@
                             <a class="nav-link text-white link-warning" href="index.html">Inicio</a>
                         </li>
                         <li class="nav-item fs-5 px-2">
-                            <a class="nav-link text-white link-warning" href="#">Animales</a>
+                            <a class="nav-link text-white link-warning" href="animales.html">Animales</a>
                         </li>
                         <li class="nav-item fs-5 px-2">
-                            <a class="nav-link text-white link-warning" href="#">Juegos</a>
+                            <a class="nav-link text-white link-warning" href="juegos.html">Juegos</a>
                         </li>
                         <li class="nav-item fs-5 px-2">
-                            <a class="nav-link text-white link-warning" href="#">Acerca de</a>
+                            <a class="nav-link text-white link-warning" href="acerca.html">Acerca de</a>
                         </li>
                     </ul>
                 </div>
                 
             </nav>
-             <div class="container-fluid text-center justify-content-center text-white py-3">
-                    <span class="fs-5">🌿 Copyright 🌿</span>
+            <div class="container-fluid text-center justify-content-center text-white py-3">
+                    <span class="fs-5">Copyright @ 2026 </span>
             </div>
         </div>
     </footer>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
 </body>
 </html>
