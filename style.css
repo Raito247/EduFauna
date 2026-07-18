@@ -46,7 +46,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin: 0; /* Evita márgenes extraños en los bordes */
+    margin: 0; 
 }
 
 main {
@@ -219,5 +219,25 @@ main {
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
+}
+
+.inicial {
+    transform: scale(1.05);
+    box-shadow: 0 20px 20px rgba(62, 99, 39, 0.7);
+
+}
+
+#opciones.incorrecta-efecto {
+    border: 3px solid #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+    border-radius: 15px;
+    padding: 10px;
+    animation: sacudida 0.4s ease-in-out;
+}
+
+@keyframes sacudida {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-8px); }
+    40%, 80% { transform: translateX(8px); }
 }

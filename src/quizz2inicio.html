@@ -90,23 +90,34 @@
     <img src="../images/patas.png" class="img position-absolute w-25" style="bottom:10px; left:20px; z-index: 1;" alt="imagen patas">
     <div style="max-width: 500px; margin-top: 160px !important;" class="container py-5 px-4 position-relative bg-body rounded-5 z-2 text-center shadow-lg">
 
-        <div class="bg-naranja text-align-center text-light rounded-5 shadow-lg justify-content-between align-items-center" style="display:flex;">
-        <div class=" p-3">
-            <span class="">0</span>
-        </div>
+        <div class="bg-naranja text-align-center text-light rounded-5 shadow-lg justify-content-center align-items-center" style="display:flex;">
 
         <div class="p-3">
-            <span class=""> - </span>
+            <span id="nombre">Jugador</span>
         </div>
+    </div>
 
-        </div>
-        <div class="pt-5">
+<div class="pt-5" id="contenedor">
+        <p id="txt-pregunta" class="fw-bold fs-4"></p>
 
+    <div class="preguntas-opciones d-flex flex-column align-items-start ps-4">
+        <label class="mb-2">
+            <input type="radio" name="opcion" value="1">
+            <span id="opcion1"></span>
+        </label>
+        <label class="mb-2">
+            <input type="radio" name="opcion" value="2">
+            <span id="opcion2"></span>
+        </label>
+        <label class="mb-2">
+            <input type="radio" name="opcion" value="3">
+            <span id="opcion3"></span> 
+        </label>
+    </div>
 
-
-
-            <button class="btn btn-warning btn-lg rounded-pill px-4" id="iniciar">Terminar quizz</button>
-        </div>
+    <div id="resultado" class="mt-4"></div>
+    <button class="btn bg-naranja text-white rounded-pill m-2" id="siguiente">Siguiente</button>
+</div>
 
     </div>
 </main>
@@ -137,7 +148,7 @@
             </div>
         </div>
     </footer>
-	<script src="script.js"></script>
+	<script src="preguntas2.js"></script>
 	<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
 </body>
 </html>

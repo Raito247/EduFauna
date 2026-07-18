@@ -2,7 +2,7 @@ const modeloRana=document.getElementById("modeloRana");
 const sections = Array.from(document.querySelectorAll("section"));
 
 //POSICIONES DENTRO DE LAS SECCIONES NO TOCAR
-const shiftPositions=[25,-75,-75,-15,25];
+const shiftPositions=[25,150,50,45,25];
 //POSICIONES DE LOS ANGULOS NO TOCAR
 const cameraOrbits=[[135,90],[135,90],[135,90],[45,90],[45,90]];
 

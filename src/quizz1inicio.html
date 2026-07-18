@@ -91,21 +91,36 @@
     <div style="max-width: 500px; margin-top: 160px !important;" class="container py-5 px-4 position-relative bg-body rounded-5 z-2 text-center shadow-lg">
 
         <div class="bg-naranja text-align-center text-light rounded-5 shadow-lg justify-content-between align-items-center" style="display:flex;">
-        <div class=" p-3">
-            <span class="">0</span>
+        <div class="p-3">
+            <span id="puntos">0</span> pts
         </div>
 
         <div class="p-3">
-            <span class=""> - </span>
+            <span id="nombre">Jugador</span>
         </div>
+    </div>
 
-        </div>
         <div class="pt-5">
 
+            <div class="contador-pregunta">
+                <span id="num-pregunta" class="num-pregunta">01</span>
+                /
+                <span> 5</span>
+            </div>
+            <p id="txt-pregunta" class="pregunta">
+                ¿Texto de la pregunta 1?
+            </p>
 
+            <div class="opciones" id="opciones">
+                <button class="opcion btn bg-amarillo m-2 rounded-pill" id="a">Opcion A</button>
+                <button class="opcion btn bg-amarillo m-2 rounded-pill" id="b">Opcion B</button>
+                <button class="opcion btn bg-amarillo m-2 rounded-pill" id="c">Opcion C</button>
+                <button class="opcion btn bg-amarillo m-2 rounded-pill" id="d">OPCION D</button>
+            </div>
 
+            <button class="btn bg-naranja text-white rounded-pill m-2" id="siguiente">Siguiente</button>
+            
 
-            <button class="btn btn-warning btn-lg rounded-pill px-4" id="iniciar">Terminar quizz</button>
         </div>
 
     </div>
@@ -137,7 +152,7 @@
             </div>
         </div>
     </footer>
-	<script src="script.js"></script>
+	<script src="preguntas.js"></script>
 	<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
 </body>
 </html>
