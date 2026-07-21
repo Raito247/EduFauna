@@ -11,18 +11,23 @@ if (nombre) {
 const puntosGuardados = parseInt(localStorage.getItem("puntaje-total")) || 0;
 
 if (animal && animalito) {
-    if (puntosGuardados >= 18) { 
-        animal.src = "../images/medalla1.png"; 
-        animal.alt = "¡Excelente!";
+    if (puntosGuardados >= 16) { 
+        animal.src = "../images/animal.png"; 
+        animal.alt = "Manatí";
         animalito.innerHTML = " Manatí (Gran Sabio)";
-    } else if (puntosGuardados >= 10) {
-        animal.src = "../images/medalla2.png"; 
-        animal.alt = "¡Muy bien!";
-        animalito.innerHTML = " Delfín (Buena Alma)";
+    } 
+    else if (puntosGuardados >= 12) {
+        animal.src = "../images/animal(3).png"; 
+        animal.alt = "Condor";
+        animalito.innerHTML = " Condor (Buena Alma)";
+    }else if (puntosGuardados >= 7) {
+        animal.src = "../images/4.png"; 
+        animal.alt = "Sapito";
+        animalito.innerHTML = " Sapito (Buena Alma)";
     } else {
-        animal.src = "../images/medalla3.png"; 
-        animal.alt = "Sigue intentándolo";
-        animalito.innerHTML = " Zorro Silvestre (Explorador)";
+        animal.src = "../images/12.png"; 
+        animal.alt = "Venado";
+        animalito.innerHTML = " Venado (Explorador)";
     }
 }
 

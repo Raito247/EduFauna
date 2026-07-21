@@ -6,6 +6,7 @@ const totalNoAcertadas = document.querySelector("#total-no-acertadas");
 const btnComenzar = document.querySelector("#comenzar");
 const btnInicio = document.querySelector("#inicio");
 const imgMedalla = document.querySelector("#medalla");
+const texto = document.querySelector("#texto");
 
 if (nombre) {
     nombre.innerHTML = localStorage.getItem("nombre") || "Jugador";
@@ -23,19 +24,22 @@ if (totalAcertadas) totalAcertadas.innerHTML = correctas;
 if (totalNoAcertadas) totalNoAcertadas.innerHTML = incorrectas;
 
 
-if (imgMedalla) {
+if (imgMedalla && texto) {
     if (correctas === 5) {
         // 5 acertadas
         imgMedalla.src = "../images/medalla1.png"; 
         imgMedalla.alt = "¡Excelente! Medalla de Oro por 5 aciertos";
+        texto.innerHTML="¡Excelente! Medalla de Oro por 5 aciertos";
     } else if (correctas >= 3) {
         // 3 o 4 acertadas
         imgMedalla.src = "../images/medalla2.png"; 
         imgMedalla.alt = "¡Muy bien! Medalla de Plata por tu gran esfuerzo";
+        texto.innerHTML="¡Muy bien! Medalla de Plata por tu gran esfuerzo";
     } else {
         // 2, 1 o 0 acertadas
         imgMedalla.src = "../images/medalla3.png"; 
         imgMedalla.alt = "Medalla de Bronce. ¡Sigue intentándolo para aprender más!";
+        texto.innerHTML="Medalla de Bronce. ¡Sigue intentándolo para aprender más!";
     }
 }
 
