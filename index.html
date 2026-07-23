@@ -120,17 +120,698 @@
     </section>
     
 
-    <section class="container-fluid bg-azul-oscuro overflow-hidden pt-5">
-        <div class="my-5 row p-5">
-            <div class="col-sm-6 hover-zoom ">
-                    <img src="images/mapa.png"class="img-fluid" width="500">
-            </div>
-            <div class="col-sm-6">
-                <h1 class=" display-1 cherry-bomb-one-regular text-white">Nuestros vecinos más especiales te necesitan.</h1>
-                <p class="display-4 text-white">¿Sabías que muchos están en <span class="text-warning">peligro</span>?</p>
-            </div>  
+    <section class="container-fluid bg-azul-oscuro overflow-hidden pt-5 pb-5" id="explorar-biodiversidad">
+
+    <div class="container py-5">
+
+        <!-- TÍTULO -->
+        <div class="text-center text-white mb-5">
+
+            <h1 class="display-2 cherry-bomb-one-regular">
+                🗺️ Explora nuestra biodiversidad
+            </h1>
+
+            <p class="fs-2 text-white">
+                Descubre dónde viven nuestros animales del occidente de Venezuela
+            </p>
+
+            <p class="fs-5">
+                Haz clic sobre una región para conocer las especies que habitan en ella.
+            </p>
+
         </div>
-    </section>
+
+
+        <!-- CONTENEDOR PRINCIPAL -->
+        <div class="row align-items-center g-5">
+
+
+            <!-- MAPA -->
+            <div class="col-lg-7 text-center">
+
+                <div class="mapa-interactivo-container">
+
+                    <img
+                        src="images/mapa.png"
+                        alt="Mapa del occidente de Venezuela"
+                        class="img-fluid mapa-interactivo"
+                    >
+
+
+                    <!-- BOTÓN MÉRIDA -->
+                    <button
+                        class="mapa-punto punto-merida"
+                        onclick="mostrarRegion('merida')"
+                        title="Estado Mérida">
+                        📍
+                    </button>
+
+
+                    <!-- BOTÓN TÁCHIRA -->
+                    <button
+                        class="mapa-punto punto-tachira"
+                        onclick="mostrarRegion('tachira')"
+                        title="Estado Táchira">
+                        📍
+                    </button>
+
+
+                    <!-- BOTÓN TRUJILLO -->
+                    <button
+                        class="mapa-punto punto-trujillo"
+                        onclick="mostrarRegion('trujillo')"
+                        title="Estado Trujillo">
+                        📍
+                    </button>
+
+
+                    <!-- BOTÓN FALCÓN -->
+                    <button
+                        class="mapa-punto punto-falcon"
+                        onclick="mostrarRegion('falcon')"
+                        title="Estado Falcón">
+                        📍
+                    </button>
+
+
+                    <!-- BOTÓN LARA -->
+                    <button
+                        class="mapa-punto punto-lara"
+                        onclick="mostrarRegion('lara')"
+                        title="Estado Lara">
+                        📍
+                    </button>
+
+
+                    <!-- BOTÓN ZULIA -->
+                    <button
+                        class="mapa-punto punto-zulia"
+                        onclick="mostrarRegion('zulia')"
+                        title="Estado Zulia">
+                        📍
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PANEL INFORMACIÓN -->
+            <div class="col-lg-5">
+
+                <div
+                    id="panel-region"
+                    class="panel-region bg-verde-claro rounded-4 p-4 shadow"
+                >
+
+                    <div class="text-center">
+
+                        <div class="fs-1 mb-3">
+                            🗺️
+                        </div>
+
+                        <h2
+                            id="region-titulo"
+                            class="cherry-bomb-one-regular"
+                        >
+                            Selecciona una región
+                        </h2>
+
+                        <p id="region-descripcion" class="fs-5">
+                            Haz clic en uno de los puntos del mapa para descubrir
+                            qué animales de EduFauna se encuentran en esa región.
+                        </p>
+
+                    </div>
+
+
+                    <!-- LISTA DE ANIMALES -->
+                    <div
+                        id="region-animales"
+                        class="mt-4"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     SECCIÓN ESTADÍSTICAS EDUFAUNA
+     ===================================================== -->
+
+<section class="estadisticas-eduFauna py-5">
+
+    <div class="container py-5">
+
+        <!-- TÍTULO -->
+
+        <div class="text-center mb-5">
+
+            <h1 class="display-2 cherry-bomb-one-regular text-dark">
+                📊 EduFauna en números
+            </h1>
+
+            <p class="fs-3 text-dark">
+                Conoce la biodiversidad que habita el occidente de Venezuela
+            </p>
+
+        </div>
+
+
+        <!-- TARJETAS PRINCIPALES -->
+
+        <div class="row g-4 justify-content-center">
+
+
+            <!-- ESPECIES -->
+
+            <div class="col-md-4">
+
+                <div class="estadistica-card text-center">
+
+                    <div class="estadistica-icono">
+                        🐾
+                    </div>
+
+                    <div
+                        class="estadistica-numero"
+                        data-valor="17">
+                        0
+                    </div>
+
+                    <h3 class="cherry-bomb-one-regular">
+                        Especies
+                    </h3>
+
+                    <p>
+                        Forman parte de nuestro catálogo educativo.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- GRUPOS -->
+
+            <div class="col-md-4">
+
+                <div class="estadistica-card text-center">
+
+                    <div class="estadistica-icono">
+                        🧬
+                    </div>
+
+                    <div
+                        class="estadistica-numero"
+                        data-valor="4">
+                        0
+                    </div>
+
+                    <h3 class="cherry-bomb-one-regular">
+                        Grupos zoológicos
+                    </h3>
+
+                    <p>
+                        Anfibios, aves, mamíferos e insectos.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ESTADOS -->
+
+            <div class="col-md-4">
+
+                <div class="estadistica-card text-center">
+
+                    <div class="estadistica-icono">
+                        📍
+                    </div>
+
+                    <div
+                        class="estadistica-numero"
+                        data-valor="6">
+                        0
+                    </div>
+
+                    <h3 class="cherry-bomb-one-regular">
+                        Estados representados
+                    </h3>
+
+                    <p>
+                        Especies distribuidas en el occidente venezolano.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEPARADOR -->
+
+        <div class="text-center my-5">
+
+            <h2 class="display-4 cherry-bomb-one-regular">
+                🧬 ¿Qué tipo de animales encontramos?
+            </h2>
+
+        </div>
+
+
+        <!-- GRÁFICO DE GRUPOS -->
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="grafico-grupos-card">
+
+                    <!-- ANFIBIOS -->
+
+                    <div class="grupo-estadistica">
+
+                        <div class="grupo-info">
+
+                            <span>
+                                🐸 Anfibios
+                            </span>
+
+                            <strong>
+                                11 especies
+                            </strong>
+
+                        </div>
+
+                        <div class="barra-fondo">
+
+                            <div
+                                class="barra-progreso barra-anfibios"
+                                style="width: 64.7%;">
+                            </div>
+
+                        </div>
+
+                        <small>
+                            64.7% del catálogo
+                        </small>
+
+                    </div>
+
+
+                    <!-- AVES -->
+
+                    <div class="grupo-estadistica">
+
+                        <div class="grupo-info">
+
+                            <span>
+                                🦅 Aves
+                            </span>
+
+                            <strong>
+                                2 especies
+                            </strong>
+
+                        </div>
+
+                        <div class="barra-fondo">
+
+                            <div
+                                class="barra-progreso barra-aves"
+                                style="width: 11.8%;">
+                            </div>
+
+                        </div>
+
+                        <small>
+                            11.8% del catálogo
+                        </small>
+
+                    </div>
+
+
+                    <!-- MAMÍFEROS -->
+
+                    <div class="grupo-estadistica">
+
+                        <div class="grupo-info">
+
+                            <span>
+                                🦌 Mamíferos
+                            </span>
+
+                            <strong>
+                                2 especies
+                            </strong>
+
+                        </div>
+
+                        <div class="barra-fondo">
+
+                            <div
+                                class="barra-progreso barra-mamiferos"
+                                style="width: 11.8%;">
+                            </div>
+
+                        </div>
+
+                        <small>
+                            11.8% del catálogo
+                        </small>
+
+                    </div>
+
+
+                    <!-- INSECTOS -->
+
+                    <div class="grupo-estadistica">
+
+                        <div class="grupo-info">
+
+                            <span>
+                                🦋 Insectos
+                            </span>
+
+                            <strong>
+                                2 especies
+                            </strong>
+
+                        </div>
+
+                        <div class="barra-fondo">
+
+                            <div
+                                class="barra-progreso barra-insectos"
+                                style="width: 11.8%;">
+                            </div>
+
+                        </div>
+
+                        <small>
+                            11.8% del catálogo
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     ESTADÍSTICA DE DISTRIBUCIÓN GEOGRÁFICA
+     ===================================================== -->
+
+<section class="distribucion-geografica py-5">
+
+    <div class="container py-5">
+
+        <!-- TÍTULO -->
+
+        <div class="text-center mb-5">
+
+            <h1 class="display-2 cherry-bomb-one-regular text-dark">
+                🗺️ ¿Dónde se concentra nuestra biodiversidad?
+            </h1>
+
+            <p class="fs-3 text-dark">
+                Explora la distribución de las especies de EduFauna
+                en el occidente de Venezuela.
+            </p>
+
+            <p class="fs-5 text-muted">
+                Haz clic en una región para explorar sus especies.
+            </p>
+
+        </div>
+
+
+        <!-- CONTENEDOR -->
+
+        <div class="row g-5 align-items-center">
+
+
+            <!-- GRÁFICO -->
+
+            <div class="col-lg-7">
+
+                <div class="distribucion-card">
+
+                    <h2 class="text-center cherry-bomb-one-regular mb-4">
+                        Especies registradas por estado
+                    </h2>
+
+
+                    <!-- MÉRIDA -->
+
+                    <button
+                        class="barra-estado"
+                        onclick="seleccionarEstadoDesdeGrafico('merida')">
+
+                        <div class="estado-info">
+
+                            <span>
+                                📍 Mérida
+                            </span>
+
+                            <strong>
+                                7 especies
+                            </strong>
+
+                        </div>
+
+                        <div class="barra-estado-fondo">
+
+                            <div
+                                class="barra-estado-progreso"
+                                style="width: 100%;">
+                            </div>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- TÁCHIRA -->
+
+                    <button
+                        class="barra-estado"
+                        onclick="seleccionarEstadoDesdeGrafico('tachira')">
+
+                        <div class="estado-info">
+
+                            <span>
+                                📍 Táchira
+                            </span>
+
+                            <strong>
+                                5 especies
+                            </strong>
+
+                        </div>
+
+                        <div class="barra-estado-fondo">
+
+                            <div
+                                class="barra-estado-progreso"
+                                style="width: 71.4%;">
+                            </div>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- TRUJILLO -->
+
+                    <button
+                        class="barra-estado"
+                        onclick="seleccionarEstadoDesdeGrafico('trujillo')">
+
+                        <div class="estado-info">
+
+                            <span>
+                                📍 Trujillo
+                            </span>
+
+                            <strong>
+                                5 especies
+                            </strong>
+
+                        </div>
+
+                        <div class="barra-estado-fondo">
+
+                            <div
+                                class="barra-estado-progreso"
+                                style="width: 71.4%;">
+                            </div>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- FALCÓN -->
+
+                    <button
+                        class="barra-estado"
+                        onclick="seleccionarEstadoDesdeGrafico('falcon')">
+
+                        <div class="estado-info">
+
+                            <span>
+                                📍 Falcón
+                            </span>
+
+                            <strong>
+                                4 especies
+                            </strong>
+
+                        </div>
+
+                        <div class="barra-estado-fondo">
+
+                            <div
+                                class="barra-estado-progreso"
+                                style="width: 57.1%;">
+                            </div>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- LARA -->
+
+                    <button
+                        class="barra-estado"
+                        onclick="seleccionarEstadoDesdeGrafico('lara')">
+
+                        <div class="estado-info">
+
+                            <span>
+                                📍 Lara
+                            </span>
+
+                            <strong>
+                                1 especie
+                            </strong>
+
+                        </div>
+
+                        <div class="barra-estado-fondo">
+
+                            <div
+                                class="barra-estado-progreso"
+                                style="width: 14.3%;">
+                            </div>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- ZULIA -->
+
+                    <button
+                        class="barra-estado"
+                        onclick="seleccionarEstadoDesdeGrafico('zulia')">
+
+                        <div class="estado-info">
+
+                            <span>
+                                📍 Zulia
+                            </span>
+
+                            <strong>
+                                1 especie
+                            </strong>
+
+                        </div>
+
+                        <div class="barra-estado-fondo">
+
+                            <div
+                                class="barra-estado-progreso"
+                                style="width: 14.3%;">
+                            </div>
+
+                        </div>
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPLICACIÓN -->
+
+            <div class="col-lg-5">
+
+                <div class="distribucion-info">
+
+                    <div class="fs-1 mb-3">
+                        🌎
+                    </div>
+
+                    <h2 class="cherry-bomb-one-regular">
+                        Biodiversidad occidental
+                    </h2>
+
+                    <p class="fs-5">
+
+                        Las especies estudiadas por EduFauna se
+                        distribuyen en diferentes ecosistemas del
+                        occidente venezolano.
+
+                    </p>
+
+                    <p class="fs-5">
+
+                        Desde los páramos andinos hasta los
+                        ecosistemas acuáticos del Lago de Maracaibo,
+                        cada región alberga especies únicas que
+                        necesitan protección.
+
+                    </p>
+
+                    <div class="mt-4">
+
+                        <span class="badge bg-verde fs-6 p-3">
+                            17 especies estudiadas
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
     <section class="position-relative bg-azul-oscuro overflow-hidden pt-5">
         <div class="my-5 row p-5">

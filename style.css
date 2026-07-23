@@ -495,3 +495,814 @@ main {
         opacity: 1;
     }
 }
+
+/* =====================================================
+   MAPA INTERACTIVO DE EDUFAUNA
+   ===================================================== */
+
+.mapa-interactivo-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 650px;
+}
+
+.mapa-interactivo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* PUNTOS DEL MAPA */
+
+.mapa-punto {
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #f5c542;
+    color: #ffffff;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.mapa-punto:hover {
+    transform: translate(-50%, -50%) scale(1.25);
+
+    background-color: #2ca58d;
+
+    box-shadow:
+        0 0 0 8px rgba(44, 165, 141, 0.25),
+        0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ANIMACIÓN DE PULSO */
+
+.mapa-punto::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background-color: rgba(245, 197, 66, 0.4);
+
+    transform: translate(-50%, -50%);
+
+    animation: pulsoMapa 2s infinite;
+
+    z-index: -1;
+}
+
+
+@keyframes pulsoMapa {
+
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+    }
+
+    70% {
+        width: 180%;
+        height: 180%;
+        opacity: 0;
+    }
+
+    100% {
+        width: 180%;
+        height: 180%;
+        opacity: 0;
+    }
+
+}
+
+
+/* =====================================================
+   POSICIONES DE LOS ESTADOS
+   ===================================================== */
+
+/*
+   IMPORTANTE:
+
+   Estas posiciones son aproximadas y están pensadas
+   para el mapa que ya utilizas.
+
+   Si los puntos no coinciden exactamente con tu imagen,
+   solo ajustaremos estos porcentajes.
+*/
+
+
+.punto-zulia {
+    top: 20%;
+    left: 7.5%;
+}
+
+.punto-falcon {
+    top: 11.4%;
+    left: 25%;
+}
+
+.punto-lara {
+    top: 18.7%;
+    left: 26%;
+}
+
+.punto-trujillo {
+    top: 24.8%;
+    left: 21%;
+}
+
+.punto-merida {
+    top: 32%;
+    left: 15.4%;
+}
+
+.punto-tachira {
+    top: 37%;
+    left: 10%;
+}
+
+
+/* =====================================================
+   PANEL DE INFORMACIÓN
+   ===================================================== */
+
+.panel-region {
+    min-height: 400px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.panel-region:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* =====================================================
+   TARJETAS DE ANIMALES
+   ===================================================== */
+
+.animal-region-card {
+
+    background-color: rgba(255, 255, 255, 0.7);
+
+    border-radius: 20px;
+
+    padding: 15px;
+
+    margin-bottom: 12px;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+.animal-region-card:hover {
+
+    transform: translateX(5px);
+
+    background-color: #ffffff;
+
+}
+
+
+.animal-region-card h4 {
+
+    margin: 0;
+
+    font-family: "Cherry Bomb One", cursive;
+
+}
+
+
+.animal-region-card p {
+
+    margin: 5px 0 0;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 991px) {
+
+    .mapa-interactivo-container {
+        max-width: 550px;
+    }
+
+    .panel-region {
+        margin-top: 20px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .mapa-punto {
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 17px;
+
+    }
+
+    .panel-region {
+
+        min-height: auto;
+
+    }
+
+}
+
+/* =====================================================
+   ESTADÍSTICAS EDUFAUNA
+   ===================================================== */
+
+.estadisticas-eduFauna {
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8f4df 0%,
+            #ffffff 100%
+        );
+
+}
+
+
+/* =====================================================
+   TARJETAS PRINCIPALES
+   ===================================================== */
+
+.estadistica-card {
+
+    height: 100%;
+
+    padding: 35px 25px;
+
+    background-color: #ffffff;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.estadistica-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 20px 35px rgba(0, 0, 0, 0.18);
+
+}
+
+
+/* =====================================================
+   ICONOS
+   ===================================================== */
+
+.estadistica-icono {
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =====================================================
+   NÚMEROS
+   ===================================================== */
+
+.estadistica-numero {
+
+    font-family:
+        "Cherry Bomb One",
+        cursive;
+
+    font-size: 70px;
+
+    line-height: 1;
+
+    color:
+        #2ca58d;
+
+}
+
+
+/* =====================================================
+   TARJETA DEL GRÁFICO
+   ===================================================== */
+
+.grafico-grupos-card {
+
+    background-color:
+        #ffffff;
+
+    padding:
+        40px;
+
+    border-radius:
+        30px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* =====================================================
+   CADA GRUPO
+   ===================================================== */
+
+.grupo-estadistica {
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.grupo-estadistica:last-child {
+
+    margin-bottom:
+        0;
+
+}
+
+
+.grupo-info {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        8px;
+
+    font-size:
+        20px;
+
+}
+
+
+.grupo-info strong {
+
+    font-family:
+        "Cherry Bomb One",
+        cursive;
+
+}
+
+
+/* =====================================================
+   BARRAS
+   ===================================================== */
+
+.barra-fondo {
+
+    width:
+        100%;
+
+    height:
+        25px;
+
+    background-color:
+        #e5e5e5;
+
+    border-radius:
+        50px;
+
+    overflow:
+        hidden;
+
+}
+
+
+.barra-progreso {
+
+    height:
+        100%;
+
+    border-radius:
+        50px;
+
+    animation:
+        crecerBarra 1.5s ease forwards;
+
+}
+
+
+.barra-anfibios {
+
+    background-color:
+        #2ca58d;
+
+}
+
+
+.barra-aves {
+
+    background-color:
+        #f5c542;
+
+}
+
+
+.barra-mamiferos {
+
+    background-color:
+        #b26836;
+
+}
+
+
+.barra-insectos {
+
+    background-color:
+        #913710;
+
+}
+
+
+@keyframes crecerBarra {
+
+    from {
+
+        width:
+            0 !important;
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 576px) {
+
+    .estadistica-numero {
+
+        font-size:
+            55px;
+
+    }
+
+
+    .grafico-grupos-card {
+
+        padding:
+            25px;
+
+    }
+
+
+    .grupo-info {
+
+        font-size:
+            17px;
+
+    }
+
+}
+
+/* =====================================================
+   DISTRIBUCIÓN GEOGRÁFICA
+   ===================================================== */
+
+.distribucion-geografica {
+
+    background-color:
+        #eaf6f2;
+
+}
+
+
+/* =====================================================
+   TARJETA DEL GRÁFICO
+   ===================================================== */
+
+.distribucion-card {
+
+    background-color:
+        #ffffff;
+
+    padding:
+        40px;
+
+    border-radius:
+        30px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* =====================================================
+   BOTONES DE ESTADO
+   ===================================================== */
+
+.barra-estado {
+
+    width:
+        100%;
+
+    border:
+        none;
+
+    background:
+        transparent;
+
+    padding:
+        15px 0;
+
+    cursor:
+        pointer;
+
+    text-align:
+        left;
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+.barra-estado:hover {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =====================================================
+   INFORMACIÓN DEL ESTADO
+   ===================================================== */
+
+.estado-info {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        8px;
+
+    font-size:
+        20px;
+
+}
+
+
+.estado-info span {
+
+    font-weight:
+        600;
+
+}
+
+
+.estado-info strong {
+
+    font-family:
+        "Cherry Bomb One",
+        cursive;
+
+}
+
+
+/* =====================================================
+   BARRA DE FONDO
+   ===================================================== */
+
+.barra-estado-fondo {
+
+    width:
+        100%;
+
+    height:
+        25px;
+
+    background-color:
+        #e5e5e5;
+
+    border-radius:
+        50px;
+
+    overflow:
+        hidden;
+
+}
+
+
+/* =====================================================
+   BARRA DE PROGRESO
+   ===================================================== */
+
+.barra-estado-progreso {
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2ca58d,
+            #74c69d
+        );
+
+    border-radius:
+        50px;
+
+    transform-origin:
+        left;
+
+    animation:
+        crecerDistribucion
+        1.2s
+        ease
+        forwards;
+
+}
+
+
+@keyframes crecerDistribucion {
+
+    from {
+
+        transform:
+            scaleX(0);
+
+    }
+
+    to {
+
+        transform:
+            scaleX(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   EFECTO AL SELECCIONAR
+   ===================================================== */
+
+.barra-estado.estado-seleccionado {
+
+    background-color:
+        rgba(44, 165, 141, 0.12);
+
+    border-radius:
+        15px;
+
+    padding:
+        15px;
+
+}
+
+
+.barra-estado.estado-seleccionado
+.barra-estado-progreso {
+
+    background:
+        linear-gradient(
+            90deg,
+            #f5c542,
+            #b26836
+        );
+
+}
+
+
+/* =====================================================
+   TARJETA DE INFORMACIÓN
+   ===================================================== */
+
+.distribucion-info {
+
+    background-color:
+        #ffffff;
+
+    padding:
+        40px;
+
+    border-radius:
+        30px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+
+}
+
+
+.distribucion-info h2 {
+
+    font-size:
+        40px;
+
+}
+
+
+.distribucion-info p {
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 576px) {
+
+    .distribucion-card {
+
+        padding:
+            25px;
+
+    }
+
+
+    .distribucion-info {
+
+        padding:
+            25px;
+
+    }
+
+
+    .estado-info {
+
+        font-size:
+            17px;
+
+    }
+
+}
